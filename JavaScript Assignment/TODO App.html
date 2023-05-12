@@ -1,0 +1,72 @@
+<!-- Create a simple to-do app to add TODO items to the list through an input field and a button. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do list</title>
+    <style>
+        *{
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        body{
+            display: flex;
+            justify-content: center;   
+        }
+        h1{
+            text-align: center;
+        }
+
+        #new-item-input{
+            width: 300px;
+            padding: 9px ;
+            margin-right: 10px;
+            border-radius: 5px;           
+        }
+
+        #add-item-button{
+            padding: 9px;
+            background-color:lightgreen;
+            border: none;
+            border-radius: 5px;
+            border: 2px solid black;
+            color: white;
+            font-weight: 700;        
+        }
+
+        ul{
+            list-style-type: none;
+        }
+
+        li{
+            margin: 4px 0;
+            line-height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>To-Do App</h1>
+        <input type="text" id="new-item-input" placeholder="Enter a new item">
+        <button id="add-item-button">Add Item</button>
+        <ul id="todo-list"></ul>
+    </div>
+
+    <script>
+        let newItemInput= document.getElementById("new-item-input");
+        let addItem = document.getElementById("add-item-button")
+        let list = document.getElementById("todo-list");
+
+        addItem.addEventListener("click",function(){
+            const newItemText = newItemInput.value.trim();
+            if (newItemText !== "") {
+                const newItem = document.createElement("li");
+                newItem.textContent = newItemText;
+                list.appendChild(newItem);
+                newItemInput.value = "";
+	        }
+        })
+    </script>
+</body>
+</html>

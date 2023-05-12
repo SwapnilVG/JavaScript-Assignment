@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 500vh;
+        }
+        .progress-container{ 
+        width: 100%;
+        height: 10px;
+        background-color: #ccc;
+        position: fixed;
+        top: 85px;
+        left: 0px;
+}
+
+        .progress-bar {
+        position: fixed;
+        top: 85px;
+        height:10px;
+        background-color: #4caf50;
+        width: 0%;
+}      
+        .heading{
+        background-color: #909090;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        width: 100%;
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: aliceblue;
+        
+     }
+    </style>
+</head>
+<body>
+    <div class="heading">
+        <h1>Progress-Bar</h1>
+    </div>
+    <div class="progress-container">
+        <div class="progress-bar" id="myBar"></div>
+    </div>
+
+    <script>
+    const documentHeight = document.body.scrollHeight;
+    const windowHeight = window.innerHeight;
+    const scrollDistance = documentHeight - windowHeight;
+
+    window.addEventListener('scroll', function() {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const scrollPercent = (scrollTop / scrollDistance) * 100;
+      document.getElementById('myBar').style.width = scrollPercent + '%';
+    });    
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!-- Visit https://pwskills.com/course/Full-Stack-web-development page and look for “What you'll learn” section. The section consists of a list of information on what you will be learning in the course. You are required to write a JavaScript program that stores a pre-existing array of list items. On each button click, the program should
+add a new list item in sequential order. The program should verify if any remaining items are available in the list item array and add the next item to the list accordingly. If no items are left, the function should display a message indicating that all items have been added. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>List Item Adder</title>
+    <style>
+        body{
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        li{
+            list-style:square;
+            line-height: 35px;
+            font-size: 20px;
+        }
+        button{
+            padding: 9px  30px;
+            border-radius: 10px;
+            background-color: darkmagenta;
+            color: white;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+	<h1>List Item Adder</h1>
+	<button>Add Item</button>
+	<ul></ul>
+
+    <script>
+		const listItems = ["HTML and Semantics", "Starting with CSS", "Working Template", "Mobile responsive webpages", "Grid and Flex-box in CSS","Projects using HTML & CSS","Version Control and Git","Getting Started with JavaScript","Advance JavaScript","Working with DOM","Making Projects using HTML, CSS and JavaScript","Understanding Fundamental of Computer Science","Getting Started with Database","Understanding the Database","Starting with NodeJS and Express","Understanding React and its Fundamentals","Understanding Hooks and Routers","Starting and Completing Full Fledge Projects"];
+
+		document.addEventListener("DOMContentLoaded", () => {
+			const list = document.querySelector("ul");
+			const button = document.querySelector("button");
+
+			let counter = 0;
+			button.addEventListener("click", () => {
+				if (counter < listItems.length) {
+					const newItem = document.createElement("li");
+					newItem.textContent = listItems[counter];
+					list.appendChild(newItem);
+					counter++;
+				} else {
+					alert("All items have been added!");
+				}
+			});
+		});
+	</script>
+</body>
+</html>
