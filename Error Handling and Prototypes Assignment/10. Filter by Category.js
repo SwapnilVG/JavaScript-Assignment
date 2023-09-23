@@ -9,7 +9,6 @@ function filterByCategory(products) {
     };
   }
   
-  // Expected Output
   
   var products = [
     { name: "Shirt", category: "Clothing" },
