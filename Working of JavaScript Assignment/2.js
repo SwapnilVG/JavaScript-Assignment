@@ -3,7 +3,7 @@ product. Use function expressions to define the function and call the function b
 demonstrate hoisting.*/
 
 
-console.log(MultipleNumbers(5,3))
-let MultipleNumbers = function(num1,num2){
+console.log(MultiplyNumbers(5,3))
+let MultiplyNumbers = function(num1,num2){
     return num1*num2
 }
